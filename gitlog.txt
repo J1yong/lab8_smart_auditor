@@ -1,0 +1,24 @@
+commit eb8bf0923e9a6af7636aa4e9b196536150fa6ecd (HEAD -> master)
+Author: JingYong <2602501@sit.singaporetech.edu.sg>
+Date:   Mon Oct 26 14:53:49 2026 +0800
+
+     json load and save with object product manipulation
+:
+commit eb8bf0923e9a6af7636aa4e9b196536150fa6ecd (HEAD -> master)
+Author: JingYong <2602501@sit.singaporetech.edu.sg>
+Date:   Mon Oct 26 14:53:49 2026 +0800
+
+     json load and save with object product manipulation
+
+commit cd2932912a5b29c01b7980e476826f83f02899d4
+Author: JingYong <2602501@sit.singaporetech.edu.sg>
+Date:   Mon Oct 26 14:50:43 2026 +0800
+
+    invenotr management with update stock, search product and display product
+
+commit aeb59fabda851497ec6b7a5923be7208db8b73b3
+Author: JingYong <2602501@sit.singaporetech.edu.sg>
+Date:   Mon Oct 26 14:44:49 2026 +0800
+
+    class for product and its attributes
+~

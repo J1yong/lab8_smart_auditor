@@ -1,0 +1,32 @@
+[
+    {
+        "product_id": 1001,
+        "name": "Apple Ipad",
+        "stock": 3,
+        "price": 340.0
+    },
+    {
+        "product_id": 1002,
+        "name": "Apple pen",
+        "stock": 4,
+        "price": 104.0
+    },
+    {
+        "product_id": 1003,
+        "name": "Samsung Galaxy 5",
+        "stock": 3,
+        "price": 630.0
+    },
+    {
+        "product_id": 1004,
+        "name": "Iphone case",
+        "stock": 80,
+        "price": 60.0
+    },
+    {
+        "product_id": 1005,
+        "name": "Apple Laptop",
+        "stock": 14,
+        "price": 894.0
+    }
+]
