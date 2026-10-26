@@ -1,4 +1,8 @@
+import json
+
 inventory = []
+FILE = "inventory.json"
+
 
 class product:
     def __init__(self, id, name, stock, price):
@@ -7,6 +11,13 @@ class product:
         self.__stock  = stock
         self. __price = price
 
+    def to_dictionary(self):
+        return {
+            "product_id": self.__product_id,
+            "name": self.__name,
+            "stock": self.__stock,
+            "price": self.__price
+        }
 
     def update_stock(self, newstock):
         self.__stock = newstock
@@ -20,11 +31,44 @@ class product:
 
 
 
+def load_json():
+    try:
+
+        print("inventory.json found")
+
+        with open(FILE, "r") as file:
+            data = json.load(file)
+            
+
+        for item in data:
+            product1 = product(
+                item["product_id"],
+                item ["name"], 
+                item["stock"], 
+                item["price"]
+                )
+            
+            inventory.append(product1)
+
+        
+        return print("Inventory load successfully!")
+
+    except (FileNotFoundError, json.JSONDecodeError):
+        print("No existing inventory found")
+
+
 def load_latest_id():
     if len(inventory) == 0:
         return 1000
 
     return max(item.get_product_id() for item in inventory)
+
+
+
+def save_inventory():
+
+    with open("inventory.json", "w") as file:
+        json.dump([item.to_dictionary() for item in inventory], file, indent=4)
 
 
 def display_all_product():
@@ -35,9 +79,7 @@ def display_all_product():
         print(product.display_information())
 
     print("---------------------------------------------------")
-
-
-
+        
 def update_stock():
     while True:
 
@@ -82,6 +124,8 @@ def search_product():
             print("Please key a interger!")
             continue
 
+
+
 def input_values(product_id):
 
     while True:
@@ -105,6 +149,7 @@ def input_values(product_id):
 
     return product_id
 
+
 def main_print():
     print("----------------Menu------------------")
     print("1. Display all products")
@@ -121,10 +166,11 @@ def main():
     print("======================================")
     print("Welcome to INVENTORY MANAGEMENT SYSTEM")
     print("======================================")
+    
+    load_json()
 
     product_id = load_latest_id()
     product_id += 1
-
 
     main_print()
 
@@ -151,7 +197,7 @@ def main():
             search_product()
 
         elif choice == 5:
-            print("inventory saved")
+            save_inventory()
             print("inventory saved!")
 
         elif choice == 6:
@@ -159,4 +205,3 @@ def main():
             return False
 
 main()
-        
